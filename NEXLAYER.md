@@ -15,7 +15,7 @@
 
 ## Project Summary
 <!-- nexlayer:section agent-managed=project_summary -->
-A Next.js application integrating Stripe for payment processing, utilizing a standalone production build for deployment.
+A Next.js application integrating Stripe for payment processing, utilizing the App Router and standalone production builds.
 <!-- nexlayer:end -->
 
 ## Technology Stack
@@ -31,10 +31,10 @@ A Next.js application integrating Stripe for payment processing, utilizing a sta
 
 ## Repository Structure
 <!-- nexlayer:section agent-managed=structure_map -->
-- app/ — Next.js App Router pages and layouts
+- app/ — Next.js App Router pages and API routes
+- lib/ — Utility functions and shared logic
 - public/ — Static assets
-- lib/ — Shared utility functions
-- Dockerfile — Multi-stage build for standalone production server
+- Dockerfile — Multi-stage build for standalone deployment
 <!-- nexlayer:end -->
 
 ## External Services Required
@@ -87,7 +87,7 @@ application:
   name: stripe-integration
   pods:
     - name: app
-      image: "registry.nexlayer.io/user_01kdnss9re3ack631zmxgpra36/stripe-integration:19f1a1c03bd"
+      image: "registry.nexlayer.io/user_01kdnss9re3ack631zmxgpra36/stripe-integration:19f1a210884"
       path: /
       servicePorts:
         - 3000
@@ -99,7 +99,6 @@ application:
         STRIPE_WEBHOOK_SECRET: "${STRIPE_WEBHOOK_SECRET}"
         NEXT_PUBLIC_APP_URL: "<% URL %>"
 ```
-
 <!-- nexlayer:end -->
 
 ## Nexlayer Deployment Plan
@@ -124,7 +123,7 @@ application:
 
 ## Nexlayer Configuration
 <!-- nexlayer:section agent-managed=nexlayer_config -->
-**Last deployed:** 2026-06-30T20:00:37Z  
+**Last deployed:** 2026-06-30T20:05:15Z  
 **Live URL:** https://vibrant-wasp-stripe-integration.cloud.nexlayer.ai  
 **Runtime:**  · **Port:** auto-detected  
 **Deploy branch:** nexlayer  
@@ -134,7 +133,7 @@ application:
   name: stripe-integration
   pods:
     - name: app
-      image: "registry.nexlayer.io/user_01kdnss9re3ack631zmxgpra36/stripe-integration:19f1a1c03bd"
+      image: "registry.nexlayer.io/user_01kdnss9re3ack631zmxgpra36/stripe-integration:19f1a210884"
       path: /
       servicePorts:
         - 3000
@@ -152,6 +151,7 @@ application:
 <!-- nexlayer:section agent-managed=build_history -->
 | Date | Status | Notes |
 |------|--------|-------|
-| 2026-06-30T19:58:14Z | analyzed | initial repo analysis |
-| 2026-06-30T20:00:37Z | success | deployed https://vibrant-wasp-stripe-integration.cloud.nexlayer.ai |
+| 2026-06-30T20:03:41Z | analyzed | initial repo analysis |
+| 2026-06-30T20:05:15Z | success | deployed https://vibrant-wasp-stripe-integration.cloud.nexlayer.ai |
 <!-- nexlayer:end -->
+

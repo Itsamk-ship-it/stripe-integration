@@ -2,7 +2,7 @@ application:
   name: stripe-integration
   pods:
     - name: app
-      image: "registry.nexlayer.io/user_01kdnss9re3ack631zmxgpra36/stripe-integration:19f1a1c03bd"
+      image: "registry.nexlayer.io/user_01kdnss9re3ack631zmxgpra36/stripe-integration:19f1a210884"
       path: /
       servicePorts:
         - 3000
