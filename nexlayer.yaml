@@ -1,0 +1,12 @@
+application:
+  name: glad-kite-stripe-integration
+  pods:
+    - name: app
+      image: "registry.nexlayer.io/user_01kdnss9re3ack631zmxgpra36/stripe-integration:19f19be4d66"
+      path: /
+      servicePorts:
+        - 3000
+      vars:
+        PORT: "3000"
+        HOSTNAME: "0.0.0.0"
+        NODE_ENV: "production"
